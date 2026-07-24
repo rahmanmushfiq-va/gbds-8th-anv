@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>GBDS 8th Founding Day - Profile Frame Generator</title>
+  
+  <!-- SEO & Mobile Meta Tags -->
+  <meta name="description" content="Official Profile Frame Generator for Gono Bishwabidyalay Debate Society (GBDS) Founding Day.">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Manifest & Favicon -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Fabric.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-overlay" aria-hidden="true">
+    <div class="spinner-container">
+      <div class="spinner"></div>
+      <p class="loading-text">Loading GBDS Studio...</p>
+    </div>
+  </div>
+
+  <!-- App Container -->
+  <div class="app-wrapper">
+    
+    <!-- Header -->
+    <header class="app-header" role="banner">
+      <div class="header-content">
+        <div class="logo-wrapper">
+          <img src="assets/logo.png" alt="GBDS Logo" class="gbds-logo">
+        </div>
+        <div class="title-group">
+          <h1 class="main-title">GBDS Founding Day</h1>
+          <p class="subtitle">Create Your Official Profile Frame</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" role="main">
+      <div class="workspace-card glassmorphism">
+        
+        <!-- Canvas Area -->
+        <div class="canvas-viewport" id="viewport-container">
+          <canvas id="profile-canvas" width="1080" height="1080" aria-label="Profile Frame Workspace"></canvas>
+          
+          <div id="upload-placeholder" class="placeholder-overlay">
+            <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+            <p class="placeholder-title">Upload Your Photo</p>
+            <p class="placeholder-desc">Tap below or drag and drop image here</p>
+          </div>
+        </div>
+
+        <!-- Hidden File Input -->
+        <input type="file" id="image-input" accept="image/*" class="sr-only" aria-label="Upload photo file">
+
+        <!-- Editor Controls -->
+        <div class="editor-controls" id="editor-controls" style="display: none;">
+          <div class="control-group">
+            <button type="button" class="btn-icon" id="btn-zoom-in" title="Zoom In" aria-label="Zoom In">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </button>
+            <button type="button" class="btn-icon" id="btn-zoom-out" title="Zoom Out" aria-label="Zoom Out">
+              <i class="fa-solid fa-magnifying-glass-minus"></i>
+            </button>
+            <button type="button" class="btn-icon" id="btn-rotate-left" title="Rotate Left" aria-label="Rotate Left">
+              <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <button type="button" class="btn-icon" id="btn-rotate-right" title="Rotate Right" aria-label="Rotate Right">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+            <button type="button" class="btn-icon btn-danger" id="btn-reset" title="Reset Image" aria-label="Reset Image">
+              <i class="fa-solid fa-arrow-rotate-left"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="action-grid">
+          <button type="button" id="btn-choose" class="btn btn-primary">
+            <i class="fa-solid fa-image"></i>
+            <span>Choose Photo</span>
+          </button>
+          
+          <button type="button" id="btn-download" class="btn btn-success" disabled>
+            <i class="fa-solid fa-download"></i>
+            <span>Download HD</span>
+          </button>
+
+          <button type="button" id="btn-share" class="btn btn-secondary" disabled>
+            <i class="fa-solid fa-share-nodes"></i>
+            <span>Share</span>
+          </button>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer" role="contentinfo">
+      <div class="footer-card glassmorphism">
+        <p class="footer-line">Developed by</p>
+        <p class="footer-author">Mushfiqur Rahman</p>
+        <p class="footer-role">Debate & Workshop Secretary- English</p>
+        <p class="footer-org">Gono Bishwabidyalay Debate Society (GBDS)</p>
+        <p class="footer-meta">Version 1.0 &bull; &copy; 2026</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
